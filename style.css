@@ -53,7 +53,8 @@ body {
   gap: 10px;
   margin: 10px 0;
 }
-.add-to-cart {  
+
+.add-to-cart {
   position: absolute;
   display: flex;
   max-width: 160px;
@@ -61,15 +62,16 @@ body {
   padding: 12px;
   justify-content: center;
   align-items: center;
-  gap:  8px;
+  gap: 8px;
   border-radius: 999px;
-  border: 1px solid  #AD8A85;
-  background:  #FFF;
+  border: 1px solid #AD8A85;
+  background: #FFF;
   transform: translateY(15px);
   bottom: 0;
   left: 16%;
   transition: all 0.3s ease-in-out;
 }
+
 .counter-btn {
   position: absolute;
   bottom: 0;
@@ -91,7 +93,7 @@ body {
   transition: opacity 0.3s ease-in-out;
 }
 
-.add-to-cart:hover + .counter-btn {
+.add-to-cart:hover+.counter-btn {
   opacity: 1;
 }
 
