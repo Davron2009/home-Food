@@ -21,7 +21,7 @@ body {
 
 .items {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   gap: 20px;
 }
 
@@ -29,8 +29,10 @@ body {
   background: white;
   padding: 15px;
   border-radius: 10px;
-  text-align: center;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .item img {
@@ -51,28 +53,48 @@ body {
   gap: 10px;
   margin: 10px 0;
 }
-
-.counter button {
+.add-to-cart {  
+  position: absolute;
+  display: flex;
+  max-width: 160px;
+  width: 100%;
+  padding: 12px;
+  justify-content: center;
+  align-items: center;
+  gap:  8px;
+  border-radius: 999px;
+  border: 1px solid  #AD8A85;
+  background:  #FFF;
+  transform: translateY(15px);
+  bottom: 0;
+  left: 16%;
+  transition: all 0.3s ease-in-out;
+}
+.counter-btn {
+  position: absolute;
+  bottom: 0;
+  left: 20%;
+  transform: translateX(-50%);
+  transform: translateY(15px);
   background: #ff5733;
   color: white;
   border: none;
-  padding: 5px 10px;
-  border-radius: 5px;
-  cursor: pointer;
+  border-radius: 20px;
+  width: 160px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease-in-out;
 }
 
-.add-to-cart {
-  display: center;
-  width: 160px;
-  max-width: 160px;
-  padding: var(--spacing-150, 12px);
-  justify-content: center;
-  align-items: center;
-  gap: var(--spacing-100, 8px);
-  border-radius: 999px;
-  border: 1px solid var(--color-rose-400, #AD8A85);
-  background: var(--color-white, #FFF);
+.add-to-cart:hover + .counter-btn {
+  opacity: 1;
 }
+
 
 .cart {
   height: 300px;
@@ -93,6 +115,18 @@ body {
   padding: 0;
 }
 
+.item-img {
+  height: 240px;
+  width: 250px;
+  position: relative;
+  margin-bottom: 38px;
+}
+
+.food-img {
+  width: 100%;
+  height: 100%;
+}
+
 #confirm-order {
   width: 100%;
   background: #27ae60;
@@ -104,6 +138,27 @@ body {
   margin-top: 150px;
 }
 
+
+.minus,
+.plus {
+  width: 25px;
+  height: 25px;
+  font-size: 14px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border: 2px solid white;
+  border-radius: 50%;
+}
+
+.minus:hover,
+.plus:hover {
+  background: white;
+  color: #ff5733;
+  transform: scale(1.1);
+}
+
+
 .h3 {
   color: var(--color-rose-900, #260F08);
   font-family: "Red Hat Text";
@@ -111,22 +166,24 @@ body {
   font-weight: 600;
 
 }
-/* Modal oynasi */
+
+
 .modal {
   display: none;
+  flex-direction: column;
   position: fixed;
-  z-index: 1000;
-  left: 0;
-  top: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5); /* Orqa fon parda */
+  background-color: rgba(0, 0, 0, 0.5);
   justify-content: center;
   align-items: center;
 }
 
-/* Modal kontenti */
+
 .modal-content {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
   background: white;
   padding: 20px;
   border-radius: 10px;
@@ -134,9 +191,12 @@ body {
   width: 300px;
 }
 
-/* Yopish tugmasi */
 .close-btn {
   float: right;
   font-size: 24px;
   cursor: pointer;
+}
+
+.img-cace {
+  width: 30%;
 }
